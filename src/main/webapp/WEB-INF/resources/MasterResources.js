@@ -25,7 +25,7 @@ application.controller('Clientes',function($scope,$http){
 		});
 	};
 
-	//Función guardar clientes
+	//Funciï¿½n guardar clientes
 	$scope.guardarCliente = function(){
 
 		$http({
@@ -76,7 +76,7 @@ application.controller('Clientes',function($scope,$http){
 		});
 	};
 
-	//Función eliminar que recibe por parámetro el índice
+	//Funciï¿½n eliminar que recibe por parï¿½metro el ï¿½ndice
 	$scope.eliminarCliente = function(indice){
 
 		$http({
@@ -98,7 +98,7 @@ application.controller('Clientes',function($scope,$http){
 
 	};
 
-	//Función que limpia datos
+	//Funciï¿½n que limpia datos
 	$scope.limpiarDatos = function(){
 		$scope._id = null;
 		$scope.nombre = "";
