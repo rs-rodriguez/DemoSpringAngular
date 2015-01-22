@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="application">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+<link rel="stylesheet" href="/DemoAngular/resources/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/DemoAngular/resources/css/main.css">
+	<script src="/DemoAngular/resources/js/jquery.js" type="text/javascript"></script>
+	<script src="/DemoAngular/resources/js/angular.min.js" type="text/javascript"></script>
+	<script src="/DemoAngular/resources/js/script.js" type="text/javascript"></script>
+	<script src="/DemoAngular/resources/js/bootstrap.min.js" type="text/javascript"></script>
+<script type="text/javascript" src="/DemoAngular/resources/MasterResources.js"></script>
+
+
+</head>
+<body>
+	
+	<div class="container" ng-controller="Clientes" ng-init="cargarClientes()">
+		
+		<a href="#modal-id" data-toggle="modal" class="btn btn-primary centrado">Agregar Persona</a>
+		<br>
+		<br>
+	
+		<div class="col-xs-4 col-xs-offset-4">
+			
+			<div class="right-inner-addon">
+				<i class="glyphicon glyphicon-search"></i>
+				<input type="search" class="form-control" ng-model="query" placeholder="Search"/>
+			</div>
+	
+		</div>
+		
+		
+		<table class="table">
+		<thead>
+			<tr>
+				<th>Nombre</th>
+				<th>Apellido</th>
+				<th>Domicilio</th>
+				<th>Teléfono</th>
+				<th>Email</th>
+				<th>Acción</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="item in clientes | filter:query | orderBy: nombre">
+				<td>{{item.nombre}}</td>
+				<td>{{item.apellido}}</td>
+				<td>{{item.domicilio}}</td>
+				<td>{{item.telefono}}</td>
+				<td>{{item.email}}</td>
+				<td><a class="btn btn-info" data-toggle="modal" href="#modal-id" ng-click="recuperarCliente(item._id)">Editar</a></td>
+				<td><a href="" class="btn btn-danger" ng-click="eliminarCliente(item._id)">Eliminar</a></td>
+			</tr>
+		</tbody>
+	</table>
+		
+		
+	</div>	
+
+
+</body>
+</html>
